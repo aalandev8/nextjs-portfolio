@@ -49,18 +49,6 @@ export const HomeSection = () => {
               <span className="text-gray-300 font-bold">Blockchain</span>
             </div>
           </div>
-
-          {/* CTA Button */}
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="group flex items-center space-x-2 bg-gray-900 text-emerald-500 
-                      px-6 py-3 rounded-lg border border-emerald-500/20 mt-8
-                      hover:bg-emerald-500/10 transition-all duration-300"
-          >
-            <span>Projects</span>
-            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </motion.button>
         </motion.div>
 
         {/* Subtle decorative gradient */}
