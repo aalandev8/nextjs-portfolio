@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ChevronRight, Terminal, Server, Code2 } from 'lucide-react'
+import { Terminal, Server, Code2 } from 'lucide-react'
 
 export const HomeSection = () => {
   return (
