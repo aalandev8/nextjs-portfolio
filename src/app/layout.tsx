@@ -5,6 +5,7 @@ import NavbarWrapper from "./_components/ui/NavbarWrapper";
 export const metadata: Metadata = {
   title: "Developer Portfolio - Aalandev",
   description: "Facundo Duque professional developer portfolio built on Nextjs.",
+  icons: "favicon.png"
 };
 
 export default function RootLayout({
@@ -14,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="">
+      <body className="overflow-hidden">
         <NavbarWrapper />
         {children}
       </body>

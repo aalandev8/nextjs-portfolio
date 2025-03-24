@@ -1,31 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { GraduationCap, Code2, Binary, Lightbulb } from 'lucide-react'
+import { Highlights } from '@/app/const'
 
 export const AboutSection = () => {
-  const highlights = [
-    {
-      icon: GraduationCap,
-      title: "Engineering Background",
-      description: "Software Engineering student with a strong foundation in problem-solving and analytical thinking",
-    },
-    {
-      icon: Code2,
-      title: "Full Stack Development",
-      description: "Building modern web applications with a focus on clean architecture and user experience",
-    },
-    {
-      icon: Binary,
-      title: "Blockchain Technology",
-      description: "Exploring decentralized solutions and smart contract development",
-    },
-    {
-      icon: Lightbulb,
-      title: "Innovation Mindset",
-      description: "Passionate about leveraging technology to create impactful solutions",
-    },
-  ]
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -47,8 +25,8 @@ export const AboutSection = () => {
   }
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center p-4 bg-black">
-      <div className="max-w-4xl w-full space-y-16">
+    <div className="min-h-screen w-full flex items-center justify-center p-6 bg-black">
+      <div className="max-w-4xl w-full space-y-18">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -87,12 +65,12 @@ export const AboutSection = () => {
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
-          {highlights.map((item) => (
+          {Highlights.map((item) => (
             <motion.div
               key={item.title}
               variants={itemVariants}
               className="p-6 rounded-lg bg-gray-900/50 border border-emerald-500/10
-                        hover:border-emerald-500/30 transition-all duration-300"
+                        hover:border-emerald-500/30 transition-all duration-300 mt-4"
             >
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-lg bg-emerald-500/10
@@ -109,9 +87,6 @@ export const AboutSection = () => {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Subtle gradient line */}
-        <div className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent" />
       </div>
     </div>
   )
