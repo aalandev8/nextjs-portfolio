@@ -1,24 +1,25 @@
- import { GraduationCap, Code2, Binary, Lightbulb } from 'lucide-react'
+import { Code2, Boxes, Rocket } from 'lucide-react'
 
- export const Highlights = [
-    {
-      icon: GraduationCap,
-      title: "Engineering Background",
-      description: "Software Engineering student with a strong foundation in problem-solving and analytical thinking",
-    },
-    {
-      icon: Code2,
-      title: "Full Stack Development",
-      description: "Building modern web applications with a focus on clean architecture and user experience",
-    },
-    {
-      icon: Binary,
-      title: "Blockchain Technology",
-      description: "Exploring decentralized solutions and smart contract development",
-    },
-    {
-      icon: Lightbulb,
-      title: "Innovation Mindset",
-      description: "Passionate about leveraging technology to create impactful solutions",
-    },
-  ]
+export const Highlights = [
+  {
+    icon: Boxes,
+    title: "Smart Contracts",
+    description: "Building secure and efficient smart contracts with Solidity. Focused on DeFi protocols, NFT marketplaces, and token economics.",
+    tags: ["Solidity", "Hardhat", "Foundry"],
+    size: "large" as const
+  },
+  {
+    icon: Code2,
+    title: "Frontend Development",
+    description: "Creating seamless Web3 experiences with Next.js and modern React patterns.",
+    tags: ["Next.js", "TypeScript", "Web3.js"],
+    size: "medium" as const
+  },
+  {
+    icon: Rocket,
+    title: "Product & Business Logic",
+    description: "Translating business requirements into blockchain solutions and scalable dApp architectures.",
+    tags: ["Product Design", "Architecture", "DeFi"],
+    size: "medium" as const
+  }
+]
