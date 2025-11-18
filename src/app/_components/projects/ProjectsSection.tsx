@@ -10,7 +10,6 @@ export const ProjectsSection = () => {
   return (
     <div className="min-h-full w-full bg-black px-4 sm:px-6 lg:px-12 py-16 sm:py-20">
       <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -32,8 +31,6 @@ export const ProjectsSection = () => {
             <div className="h-px bg-gradient-to-r from-emerald-500/0 via-emerald-500/50 to-emerald-500/0 flex-grow"></div>
           </div>
         </motion.div>
-
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
           {PROJECTS.map((project, index) => (
             <ProjectCard
@@ -43,8 +40,6 @@ export const ProjectsSection = () => {
             />
           ))}
         </div>
-
-        {/* Terminal decorative element */}
         <div className="mt-8 sm:mt-12 md:mt-20 pt-4 sm:pt-6 border-t border-gray-800">
           <div className="font-mono text-xs text-gray-600">
             <div className="text-emerald-500/50">$ Last commit: <span className="text-gray-500">feature/projects-section</span></div>

@@ -82,8 +82,6 @@ export const AboutSection = () => {
                   <div className="inline-flex p-3 rounded-lg bg-emerald-500/10 ring-1 ring-emerald-500/20">
                     <item.icon className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-400" />
                   </div>
-
-                  {/* Content */}
                   <div className="space-y-3">
                     <h3 className="text-xl sm:text-2xl font-bold text-white">
                       {item.title}
@@ -105,15 +103,11 @@ export const AboutSection = () => {
                     ))}
                   </div>
                 </div>
-
-                {/* Decorative corner */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-500/10 to-transparent blur-2xl" />
               </motion.div>
             )
           })}
         </motion.div>
-
-        {/* Tech Stack Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

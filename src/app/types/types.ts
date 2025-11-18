@@ -1,7 +1,6 @@
 import { LucideIcon } from 'lucide-react'
 import { ComponentType } from 'react'
 
-// Using object type instead of Record<string, never>
 export type SectionComponentProps = object;
 
 export type NavId = 'home' | 'about' | 'experience' | 'projects'

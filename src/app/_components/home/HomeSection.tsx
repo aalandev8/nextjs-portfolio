@@ -13,7 +13,6 @@ export const HomeSection = () => {
           transition={{ duration: 0.8 }}
           className="space-y-4 sm:space-y-6"
         >
-          {/* Intro text with typing animation */}
           <div className="font-mono text-emerald-500 text-xs sm:text-sm md:text-base">
             <motion.span
               initial={{ opacity: 0 }}
@@ -23,8 +22,6 @@ export const HomeSection = () => {
               &gt; _
             </motion.span>
           </div>
-
-          {/* Name and role */}
           <div className="space-y-2 sm:space-y-3">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight tracking-tight">
               Facundo Duque
@@ -33,8 +30,6 @@ export const HomeSection = () => {
               Software engineer & Fullstack Developer
             </h2>
           </div>
-
-          {/* Skills section */}
           <div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 pt-2 sm:pt-4">
             <div className="flex items-center space-x-2 bg-gray-900 px-3 py-2 sm:px-4 sm:py-2 rounded-lg hover-desktop-only hover:bg-gray-800 transition-colors">
               <Terminal className="w-4 h-4 text-emerald-500" />
@@ -50,8 +45,6 @@ export const HomeSection = () => {
             </div>
           </div>
         </motion.div>
-
-        {/* Subtle decorative gradient */}
         <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500/0 via-emerald-500/20 to-emerald-500/0" />
       </div>
     </div>

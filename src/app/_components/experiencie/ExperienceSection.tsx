@@ -34,7 +34,6 @@ export const ExperienceSection = () => {
           animate="visible"
           className="relative space-y-8 sm:space-y-12"
         >
-          {/* Timeline line - hidden on mobile */}
           <div className="absolute left-6 sm:left-8 top-8 bottom-8 w-px bg-gradient-to-b from-emerald-500/20 via-emerald-500/10 to-transparent hidden sm:block" />
 
           {experiences.map((exp) => (
@@ -43,16 +42,13 @@ export const ExperienceSection = () => {
               variants={itemVariants}
               className="relative flex gap-4 sm:gap-6 md:gap-8"
             >
-              {/* Timeline node */}
               <div className="relative flex-shrink-0">
                 <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg ${exp.current ? 'bg-emerald-500/10' : 'bg-gray-800'}
                               flex items-center justify-center relative z-10`}>
                   <exp.icon className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 ${exp.current ? 'text-emerald-400' : 'text-gray-400'}`} />
                 </div>
               </div>
-
-              {/* Content */}
-              <div className="flex-1 space-y-3 sm:space-y-4 pb-4 sm:pb-8">
+                <div className="flex-1 space-y-3 sm:space-y-4 pb-4 sm:pb-8">
                 <div className="space-y-2">
                   <h3 className="text-lg sm:text-xl font-semibold text-white flex flex-wrap items-center gap-2 sm:gap-3 leading-tight">
                     {exp.title}

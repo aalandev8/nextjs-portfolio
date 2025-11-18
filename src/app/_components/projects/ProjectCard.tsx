@@ -3,17 +3,6 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, Github } from 'lucide-react'
 
-// Definimos la interfaz del proyecto dentro del mismo archivo
-export interface Project {
-  title: string;
-  description: string;
-  techs: string[];
-  githubLink?: string;
-  liveLink?: string;
-  image?: string;
-}
-
-// Definimos las props del componente
 interface ProjectCardProps {
   title: string;
   description: string;
@@ -24,7 +13,7 @@ interface ProjectCardProps {
   index: number;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ 
+export const ProjectCard = ({ 
   title, 
   description, 
   techs, 
@@ -32,7 +21,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   liveLink, 
   image, 
   index 
-}) => {
+}: ProjectCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -40,7 +29,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       transition={{ duration: 0.6, delay: 0.1 * index }}
       className="bg-gray-900 border border-emerald-500/20 rounded-lg overflow-hidden hover-desktop-only hover:border-emerald-500/50 transition-all duration-300"
     >
-      {/* Project Image */}
       <div className="h-40 sm:h-48 md:h-52 w-full bg-gray-800 relative overflow-hidden">
         <motion.div
           initial={{ filter: 'blur(5px)', opacity: 0.8 }}
@@ -53,7 +41,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           style={{ backgroundImage: `url(${image || '/api/placeholder/600/300'})` }}
         >
         </div>
-        {/* Overlay with terminal effect */}
         <div className="absolute top-0 left-0 w-full h-full bg-gray-900/70 z-0">
           <div className="p-3 sm:p-4 font-mono text-xs text-emerald-500/50">
             <div>$ Project::init(&ldquo;{title}&ldquo;);</div>
@@ -61,8 +48,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
         </div>
       </div>
-
-      {/* Project Content */}
       <div className="p-4 sm:p-5 md:p-6 space-y-3 sm:space-y-4">
         <div className="flex justify-between items-start gap-2">
           <h3 className="text-lg sm:text-xl font-bold text-white leading-tight">{title}</h3>
@@ -81,8 +66,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
 
         <p className="text-gray-400 text-sm sm:text-base leading-relaxed">{description}</p>
-
-        {/* Technologies */}
         <div className="flex flex-wrap gap-2">
           {techs.map((tech: string, i: number) => (
             <span
