@@ -63,7 +63,7 @@ export const AboutSection = () => {
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6"
         >
-          {Highlights.map((item, index) => {
+          {Highlights.map((item) => {
             const isLarge = item.size === 'large'
 
             return (

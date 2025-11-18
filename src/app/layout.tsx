@@ -3,7 +3,7 @@ import "./globals.css";
 import NavbarWrapper from "./_components/ui/NavbarWrapper";
 
 export const metadata: Metadata = {
-  title: "Developer Portfolio - Aalandev",
+  title: "Facundo Duque - Blockchain Developer",
   description: "Facundo Duque professional developer portfolio built on Nextjs.",
   icons: "favicon.png"
 };
