@@ -1,6 +1,20 @@
 
 export const PROJECTS = [
   {
+    title: "DUQUE.STUDIO",
+    description: "Digital studio specializing in premium websites for the music and nightlife industry — DJs, producers, venues, and festivals.",
+    techs: ["Next.js", "GSAP", "TailwindCSS"],
+    liveLink: "https://duque.studio/",
+    image: "/duque.studio.png"
+  },
+  {
+    title: "GERMAN DIAZ - PHOTOGRAPHER PORTFOLIO",
+    description: "Minimalist photographer portfolio with focus on visual aesthetics and high performance.",
+    techs: ["Next.js", "Framer Motion", "TailwindCSS"],
+    liveLink: "https://germandiaz.netlify.app/",
+    image: "/GermanDiaz.png"
+  },
+  {
     title: "KAMINEVOX - LANDING PAGE",
     description: "Landing page for Kaminevox, a music producer and DJ, showcasing his work and social media links.",
     techs: ["Next.js", "Framer Motion", "TailwindCSS"],
@@ -25,7 +39,7 @@ export const PROJECTS = [
     title: "PC PARTS - COMPUTER STORE WEBSITE",
     description: "Builded some features for a computer store e-commerce, managing products throw an API and creating a Script to update product prices automatically.",
     liveLink: "https://pcparts.com.uy/",
-    techs: [ "Wordpress","PHP"],
+    techs: ["Wordpress", "PHP"],
     image: "/pcparts.png"
   }
 ];
