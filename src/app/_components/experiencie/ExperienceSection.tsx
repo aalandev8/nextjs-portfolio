@@ -5,7 +5,7 @@ import { containerVariants, itemVariants, experiences } from '@/app/const/Experi
 
 export const ExperienceSection = () => {
   return (
-    <div className="min-h-full w-full flex items-start justify-center px-4 sm:px-6 lg:px-12 py-16 sm:py-20 bg-black">
+    <div className="min-h-full w-full flex items-start justify-center px-4 sm:px-6 lg:px-12 pt-24 sm:pt-20 pb-16 bg-black">
       <div className="max-w-4xl w-full space-y-8 sm:space-y-12 md:space-y-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

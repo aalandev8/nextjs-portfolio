@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ExternalLink, Github } from 'lucide-react'
+import { ExternalLink, Github, ArrowUpRight } from 'lucide-react'
 
 interface ProjectCardProps {
   title: string;
@@ -13,64 +13,80 @@ interface ProjectCardProps {
   index: number;
 }
 
-export const ProjectCard = ({ 
-  title, 
-  description, 
-  techs, 
-  githubLink, 
-  liveLink, 
-  image, 
-  index 
+export const ProjectCard = ({
+  title,
+  description,
+  techs,
+  githubLink,
+  liveLink,
+  image,
+  index
 }: ProjectCardProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.1 * index }}
-      className="bg-gray-900 border border-emerald-500/20 rounded-lg overflow-hidden hover-desktop-only hover:border-emerald-500/50 transition-all duration-300"
+      transition={{ duration: 0.7, delay: 0.1 * index, ease: "easeOut" }}
+      className="group relative bg-gray-950 border border-gray-800/50 rounded-2xl overflow-hidden hover:border-emerald-500/30 transition-all duration-500"
     >
-      <div className="h-40 sm:h-48 md:h-52 w-full bg-gray-800 relative overflow-hidden">
-        <motion.div
-          initial={{ filter: 'blur(5px)', opacity: 0.8 }}
-          whileInView={{ filter: 'blur(0px)', opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="w-full h-full bg-gradient-to-br from-gray-900 to-emerald-900/30 absolute top-0 left-0 z-10"
-        />
+      {/* Image section with overlay */}
+      <div className="h-44 sm:h-52 md:h-56 w-full relative overflow-hidden">
         <div
-          className="w-full h-full bg-cover bg-center"
+          className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
           style={{ backgroundImage: `url(${image || '/api/placeholder/600/300'})` }}
-        >
-        </div>
-        <div className="absolute top-0 left-0 w-full h-full bg-gray-900/70 z-0">
-          <div className="p-3 sm:p-4 font-mono text-xs text-emerald-500/50">
-            <div>$ Project::init(&ldquo;{title}&ldquo;);</div>
-            <div>$ Loading assets...</div>
-          </div>
+        />
+        {/* Gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-gray-950/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+        {/* Floating links on hover */}
+        <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+          {githubLink && (
+            <a
+              href={githubLink}
+              className="p-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-gray-700/50 text-gray-300 hover:text-emerald-400 hover:border-emerald-500/50 transition-all duration-200"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View on GitHub"
+            >
+              <Github className="w-4 h-4" />
+            </a>
+          )}
+          {liveLink && (
+            <a
+              href={liveLink}
+              className="p-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-gray-700/50 text-gray-300 hover:text-emerald-400 hover:border-emerald-500/50 transition-all duration-200"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View live project"
+            >
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          )}
         </div>
       </div>
-      <div className="p-4 sm:p-5 md:p-6 space-y-3 sm:space-y-4">
-        <div className="flex justify-between items-start gap-2">
-          <h3 className="text-lg sm:text-xl font-bold text-white leading-tight">{title}</h3>
-          <div className="flex gap-2 flex-shrink-0">
-            {githubLink && (
-              <a href={githubLink} className="text-gray-400 hover:text-emerald-500 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
-                <Github className="w-5 h-5" />
-              </a>
-            )}
-            {liveLink && (
-              <a href={liveLink} className="text-gray-400 hover:text-emerald-500 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" target="_blank" rel="noopener noreferrer" aria-label="View live project">
-                <ExternalLink className="w-5 h-5" />
-              </a>
-            )}
-          </div>
+
+      {/* Content */}
+      <div className="p-5 sm:p-6 space-y-4 relative">
+        {/* Top accent line */}
+        <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent" />
+
+        <div className="flex justify-between items-start gap-3">
+          <h3 className="text-lg sm:text-xl font-bold text-white leading-tight group-hover:text-emerald-50 transition-colors">
+            {title}
+          </h3>
+          {liveLink && (
+            <ArrowUpRight className="w-5 h-5 text-gray-600 group-hover:text-emerald-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0 mt-0.5" />
+          )}
         </div>
 
-        <p className="text-gray-400 text-sm sm:text-base leading-relaxed">{description}</p>
-        <div className="flex flex-wrap gap-2">
+        <p className="text-gray-400 text-sm sm:text-base leading-relaxed group-hover:text-gray-300 transition-colors">{description}</p>
+
+        <div className="flex flex-wrap gap-2 pt-1">
           {techs.map((tech: string, i: number) => (
             <span
               key={i}
-              className="text-xs px-2 py-1 rounded-md bg-gray-800 text-emerald-400 border border-emerald-500/20"
+              className="text-xs px-3 py-1.5 rounded-lg bg-emerald-500/5 text-emerald-400/80 border border-emerald-500/10 font-mono"
             >
               {tech}
             </span>

@@ -8,7 +8,7 @@ import {PROJECTS} from '@/app/const/Projects'
 
 export const ProjectsSection = () => {
   return (
-    <div className="min-h-full w-full bg-black px-4 sm:px-6 lg:px-12 py-16 sm:py-20">
+    <div className="min-h-full w-full bg-black px-4 sm:px-6 lg:px-12 pt-24 sm:pt-20 pb-16">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
